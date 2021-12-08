@@ -1,15 +1,24 @@
 import {
     ADD_TODO,
+    ADD_TODO_TAB,
     DELETE_TODO,
     EDIT_TODO,
     SELECT_ALL,
     SELECT_UNDONE,
-    SELECT_DONE
+    SELECT_DONE,
+    EDIT_TODO_TAB,
+    DELETE_TODO_TAB
 } from "../Constants/actionTypes";
 
 export const addTodo = (todo) => {
     return {
         type: ADD_TODO,
+        payload: todo,
+    };
+};
+export const addTodoTab = (todo) => {
+    return {
+        type: ADD_TODO_TAB,
         payload: todo,
     };
 };
@@ -22,6 +31,18 @@ export const deleteTodo = (id) => {
 export const editTodo = (id) => {
     return {
         type: EDIT_TODO,
+        payload: id,
+    };
+};
+export const deleteTodotab = (id) => {
+    return {
+        type: DELETE_TODO_TAB,
+        payload: id,
+    };
+};
+export const editTodotab = (id) => {
+    return {
+        type: EDIT_TODO_TAB,
         payload: id,
     };
 };

@@ -1,6 +1,6 @@
 import React, { useEffect, useState} from 'react'
 import { useDispatch, useSelector } from "react-redux";
-import { addTodo,selectAll,selectDone,selectUndone } from "../JS/Actions/action";
+import { addTodo,addTodoTab,selectAll,selectDone,selectUndone } from "../JS/Actions/action";
 
 function Form() {
   const star = useSelector((state) => state.taskReducers.toggle);
@@ -18,6 +18,8 @@ function Form() {
             done:false
         };
         dispatch(addTodo(toDo));
+        dispatch(addTodoTab(toDo));
+
     };  
     const selectsAll =(e)=>{
       e.preventDefault();
