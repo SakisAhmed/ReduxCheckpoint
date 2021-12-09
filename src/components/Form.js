@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { addTodo,addTodoTab,selectAll,selectDone,selectUndone } from "../JS/Actions/action";
 
 function Form() {
-  const star = useSelector((state) => state.taskReducers.toggle);
   useEffect(()=>{dispatch(selectAll())},[])
     const [inputText, setInputText]=useState("");
     const inputTextHandle=(e)=>{
@@ -24,17 +23,14 @@ function Form() {
     const selectsAll =(e)=>{
       e.preventDefault();
       dispatch(selectAll());
-      console.log(star)
     }
     const selectsDone =(e)=>{
       e.preventDefault();
       dispatch(selectDone());
-      console.log(star); 
     }
     const selectsUndone =(e)=>{
       e.preventDefault();
       dispatch(selectUndone());
-      console.log(star)
     }
     return (
         <div>

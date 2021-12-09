@@ -27,7 +27,6 @@ const initialState = {
             done: false,
         },
     ],
-    toggle:"all",
     table:[]
 };
 export const taskReducers = (state = initialState, action) => {
@@ -70,13 +69,11 @@ export const taskReducers = (state = initialState, action) => {
             case SELECT_ALL:
                 return {
                     ...state,
-                    toggle:"all",
                     table:state.tasks
                 };
             case SELECT_DONE:
                 return {
                         ...state,
-                        toggle:"done",
                         table:state.tasks.filter(
                             (task) => task.done === true
                         )
@@ -84,7 +81,6 @@ export const taskReducers = (state = initialState, action) => {
             case SELECT_UNDONE:
                 return {
                      ...state,
-                     toggle:"undone",
                      table:state.tasks.filter(
                         (task) => task.done === false
                     )
